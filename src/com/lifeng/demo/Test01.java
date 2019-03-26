@@ -1,6 +1,6 @@
 package com.lifeng.demo;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /** 
@@ -15,7 +15,7 @@ import java.util.List;
   */
 public class Test01 {
 	public static void main(String[] args) {
-		List arr = new ArrayList<>();
+		List arr = Arrays.asList("张三","李四","王五");
 		arr.forEach(System.out::println);
 	}
 }
