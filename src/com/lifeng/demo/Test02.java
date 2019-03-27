@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 
 /** 
- * @CompanyName lhfinance.com
  * @ClassName Test02.java 
  * @Package com.lifeng.demo 
  * @Description: (用一句话描述该文件做什么) 

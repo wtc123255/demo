@@ -1,7 +1,5 @@
 package com.lifeng.demo;
 
-import java.util.Scanner;
-
 /** 
  * @CompanyName lhfinance.com
  * @ClassName Test13.java 

@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 /** 
-  * @CompanyName lhfinance.com
   * @ClassName Test01.java 
   * @Package com.lifeng.demo 
   * @Description: (用一句话描述该文件做什么) 

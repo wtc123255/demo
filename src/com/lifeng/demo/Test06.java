@@ -3,7 +3,6 @@ package com.lifeng.demo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 /** 
- * @CompanyName lhfinance.com
  * @ClassName Test06.java 
  * @Package com.lifeng.demo 
  * @Description: (用一句话描述该文件做什么) 

@@ -1,7 +1,6 @@
 package com.lifeng.demo;
 
 /** 
- * @CompanyName lhfinance.com
  * @ClassName Test09.java 
  * @Package com.lifeng.demo 
  * @Description: (用一句话描述该文件做什么) 

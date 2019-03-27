@@ -3,14 +3,13 @@ package com.lifeng.demo;
 import java.util.Scanner;
 
 /** 
- * @CompanyName lhfinance.com
  * @ClassName Test17.java 
  * @Package com.lifeng.demo 
  * @Description: (随机生成X个两位数加法题,答对+Y分,答错-X分) 
  * @author lf  
  * @date 2019年3月25日 下午11:13:55 
  * @version V1.0.0
- * 题目扩展:关键字static,Math类
+ * 1题目扩展:关键字static,Math类
  * static学习:https://www.cnblogs.com/hcl22/p/6371939.html
  * Math常用API:https://www.cnblogs.com/HelloBigTable/p/10356977.html
  */
