@@ -17,25 +17,16 @@ public class Work07 {
 	public static void main(String[] args) {
 		int i=0;
 		//公鸡循环 最多买100/5只
-		for(int a=0;a<=100/5;a++) {
-			for(int b=0;b<=100/2;b++) {
-				for(int c=0;c<=300;c++) {
-					if(a+b+c == 100 && 5*a+2*b+1/3*c == 100) {
-						System.out.println("公鸡:"+a+"母鸡:"+b+"小鸡:"+c);
-						i++;
-					}
-				}
-			}
-		}
+		for(int g=0;g<=20;g++){
+            for(int m=0;m<=33;m++){
+                for(int x=0;x<=100-g-m;x++){
+                    if(x % 3==0 && 5*g+m*3+x/3 == 100 && g+m+x == 100){
+                        System.out.println("公鸡:"+g+",母鸡:"+m+"小鸡:"+x+"只");
+                        i++;
+                    }
+                }
+            }
+        }
 		System.out.println(i+"种");
-		
-//		test(0,50,50);
-//		test(2,45,53);
-//		test(4,40,56);
-//		test(6,35,59);
-	}
-	
-	public static void test(int a,int b,int c) {
-		System.out.println(5*a+2*b+1/3*c);
 	}
 }
