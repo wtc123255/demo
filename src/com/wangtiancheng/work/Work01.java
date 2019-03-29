@@ -37,7 +37,7 @@ public class Work01 {
 //				{
 //					t=a[j];
 //					a[j]=a[j+1];
-//					a[j+1]=t;
+//					a[j+1]=t; 
 //				}
 //			}
 //		}
