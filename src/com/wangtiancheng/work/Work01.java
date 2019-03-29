@@ -29,7 +29,7 @@ public class Work01 {
 		for(int i=0;i<a.length;i++){
 			System.out.println("请输入第"+(i+1)+"个数：");
 			a[i]=input.nextInt();
-		}
+		} 
 		sort(a);
 //		for(int i =0;i<a.length-1;i++) {
 //			for(int j=0;j<a.length-1-i;j++) {
