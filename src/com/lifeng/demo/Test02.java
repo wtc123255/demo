@@ -38,8 +38,8 @@ public class Test02 {
 			}
 		}
 		System.out.println("自动生成的代码:");
-		System.out.println("    public static void main(String[]args){");
-		System.out.print("        int[] arr = new int[] {");
+		System.out.println("public static void main(String[]args){");
+		System.out.print("    int[] arr = new int[] {");
 		for (int i = 0; i < list.size(); i++) {
 			if (i != list.size() - 1) {
 				System.out.print(list.get(i) + ",");
@@ -48,7 +48,7 @@ public class Test02 {
 			}
 		}
 		System.out.println();
-		System.out.print("        int[] index = new int[] {");
+		System.out.print("    int[] index = new int[] {");
 		for (int i = 0; i < index.size(); i++) {
 			if (i != index.size() - 1) {
 				System.out.print(index.get(i) + ",");
@@ -57,11 +57,11 @@ public class Test02 {
 			}
 		}
 		System.out.println();
-		System.out.println("        String tel = \"\";");
-		System.out.println("        for (int i : index) {");
-		System.out.println("            tel += arr[i];");
-		System.out.println("        }");
-		System.out.println("        System.out.println(\"联系方式:\"+tel);");
+		System.out.println("    String tel = \"\";");
+		System.out.println("    for (int i : index) {");
+		System.out.println("        tel += arr[i];");
 		System.out.println("    }");
+		System.out.println("    System.out.println(\"联系方式:\"+tel);");
+		System.out.println("}");
 	}
 }
