@@ -16,13 +16,19 @@ import java.util.Scanner;
   */
 public class Work03 {
 	public static void main(String[] args) {
-		int a[]=new int [3];
-		int num=0;
-	    Scanner input=new Scanner(System.in);
-	    for (int i=0;i<a.length;i++) {
-	    	System.err.println("请输入第"+(i+1)+"个数");
-	    	a[i]=input.nextInt();
-	    }
-	    
+		Scanner sc=new Scanner(System.in);
+		System.out.println("输入三条边");
+        int a=sc.nextInt(); 
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        if(a*a==(b*b+c*c)) {               
+            System.out.println("是三角形");
+        }else if (b*b==(a*a+c*c)){
+          	System.out.println("是三角形");
+       	}else if (c*c==(a*a+b*b)) {
+           	System.out.println("是三角形");
+       	}else {
+            System.out.println("不是三角型");
+        } 
 	}
 }

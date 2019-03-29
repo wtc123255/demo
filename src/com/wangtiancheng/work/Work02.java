@@ -1,5 +1,7 @@
 package com.wangtiancheng.work;
 
+import java.util.Scanner;
+
 /**
   * @Email alifenga@163.com
   * @ClassName Work02.java 
@@ -15,6 +17,12 @@ package com.wangtiancheng.work;
   */
 public class Work02 {
 	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("请输入一个字母:");
+		String str=sc.nextLine();
+		char c=str.charAt(0);
+		char ch=Character.isUpperCase(c)?Character.toLowerCase(c):Character.toUpperCase(c);//百度
+		System.out.println("转换后为:"+ch);
 		
 	}
 }

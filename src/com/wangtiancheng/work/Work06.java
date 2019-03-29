@@ -1,5 +1,7 @@
 package com.wangtiancheng.work;
 
+import java.util.Scanner;
+
 /** 
   * @Email alifenga@163.com
   * @ClassName Work06.java 
@@ -13,6 +15,20 @@ package com.wangtiancheng.work;
   */
 public class Work06 {
 	public static void main(String[] args) {
-		
-	}
+	/*	System.out.println("请输入整数");
+		Scanner sc = new Scanner(System.in);
+		int read =sc.nextInt();
+		StringBuilder sb = new StringBuilder(String.valueOf(read));
+		System.out.println(sb.reverse());
+	*/
+		Scanner scanner = new Scanner(System.in);
+		int num = scanner.nextInt();
+		String string = String.valueOf(num);
+		char[] ch = string.toCharArray();
+		String str=" ";
+		for (int i=ch.length-1;i>=0;i--) {
+			str +=String.valueOf(ch[i]);
+		}
+        System.out.println(Integer.valueOf(str));
+    }
 }
