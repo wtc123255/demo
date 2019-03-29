@@ -30,7 +30,7 @@ public class Work01 {
 			System.out.println("请输入第"+(i+1)+"个数：");
 			a[i]=input.nextInt();
 		}
-		solr(a);
+		sort(a);
 //		for(int i =0;i<a.length-1;i++) {
 //			for(int j=0;j<a.length-1-i;j++) {
 //				if(a[j]>a[j+1])
@@ -54,7 +54,7 @@ public class Work01 {
 		
 	}
 	
-	public static void solr(int[] a) {
+	public static void sort(int[] a) {
 		//和
 		int sum = 0;
 		//将数组转换成list JDK1.8新特性方法 int数组转Integer集合
