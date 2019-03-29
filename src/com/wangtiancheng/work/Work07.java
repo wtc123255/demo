@@ -15,17 +15,27 @@ package com.wangtiancheng.work;
   */
 public class Work07 {
 	public static void main(String[] args) {
-		int method=0;
-		for(int i=0;i<20;i++){               //公鸡
-		    for(int j=0;j<(100-i*5)/3;j++){ //母鸡
-	    		int number=(100-i*5-j*3)*3;//小鸡
-		    	int count=i+j+number;//总共买的鸡
-			    if(count==100){
-				 method++;
-			     System.out.println("公鸡:"+i+"  母鸡:"+j+"  小鸡:"+number);
-            }
+		int i=0;
+		//公鸡循环 最多买100/5只
+		for(int a=0;a<=100/5;a++) {
+			for(int b=0;b<=100/2;b++) {
+				for(int c=0;c<=300;c++) {
+					if(a+b+c == 100 && 5*a+2*b+1/3*c == 100) {
+						System.out.println("公鸡:"+a+"母鸡:"+b+"小鸡:"+c);
+						i++;
+					}
+				}
+			}
 		}
-		}
-	System.out.println("一共有"+method+"种方法。");
+		System.out.println(i+"种");
+		
+//		test(0,50,50);
+//		test(2,45,53);
+//		test(4,40,56);
+//		test(6,35,59);
+	}
+	
+	public static void test(int a,int b,int c) {
+		System.out.println(5*a+2*b+1/3*c);
 	}
 }
