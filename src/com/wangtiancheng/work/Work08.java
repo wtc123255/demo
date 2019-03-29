@@ -40,5 +40,25 @@ public class Work08 {
 		}
 		
 		System.out.println(str+"中有"+abcCount+"字母"+spaceCount+"空格"+numCount+"数字"+otherCount+"其他字符");
+		
+		abcCount=0;//英文字母个数
+		spaceCount=0;//空格键个数
+		numCount=0;//数字个数
+		otherCount=0;//其他字符个数
+        int len=str.length();
+        for(int i=0;i<len;i++){
+            char c=str.charAt(i);
+            if(c>=65&&c<=122) {
+            	abcCount++;
+            }else if(c>=48&&c<=57) {
+            	numCount++;
+            }else if(c==32) {
+            	spaceCount++;
+            }else {
+            	otherCount++;
+            }
+        }
+		
+		System.out.println(str+"中有"+abcCount+"字母"+spaceCount+"空格"+numCount+"数字"+otherCount+"其他字符");
 	}
 }
