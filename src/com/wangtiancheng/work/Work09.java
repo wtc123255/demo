@@ -16,6 +16,10 @@ package com.wangtiancheng.work;
   */
 public class Work09 {
 	public static void main(String[] args) {
+		Xw xw = new Xw();
+		//手动帮小王调用赚钱和娶老婆的方法
+		xw.a();
+		xw.b();
 	}
 }
 
@@ -31,6 +35,8 @@ public class Work09 {
   *
  */
 class Lw{
+	//钱100万
+	public int money = 1000000;
 }
 
 /**
@@ -45,5 +51,24 @@ class Lw{
   *
  */
 class Xw extends Lw{
+	public Xw() {
+		System.out.println("继承时金额:"+money);
+	}
+	
+	/**
+	 * 赚钱方法
+	 */
+	public void a() {
+		money += 200000;
+		System.out.println("赚钱后:"+money);
+	}
+	
+	/**
+	 * 娶老婆
+	 */
+	public void b() {
+		money -= 400000;
+		System.out.println("娶老婆后:"+money);
+	}
 }
 
