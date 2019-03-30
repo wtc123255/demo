@@ -1,15 +1,11 @@
 package com.wangtiancheng.work;
 
 /** 
-  * @Email alifenga@163.com
-  * @ClassName Work11.java 
-  * @Package com.wangtiancheng.work 
-  * @Description: (用一句话描述该文件做什么) 
-  * @author lf  
-  * @date 2019年3月30日 下午9:05:52 
-  * @version V1.0.0
-  *
-  */
+ *
+ *	随机生成一注双色球 6个红球1篮球  红球返回1-33 篮球范围1-16
+ */
 public class Work11 {
-
+	public static void main(String[] args) {
+		
+	}
 }
