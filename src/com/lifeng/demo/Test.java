@@ -20,7 +20,7 @@ public class Test{
 		}
 	}
 	public static void main(String[] args) {
-		test("1");
+		test("我 看 你 精 虫 上 脑");
 		new Test();
 	}
 }
