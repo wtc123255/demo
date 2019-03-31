@@ -11,9 +11,9 @@ import java.util.Random;
 public class Work11 {
 	public static void main(String[] args) {
 	    HashSet<Integer> set = new HashSet<>();
-	    Random r = new Random();
+	    Random a = new Random();
 		while (set.size() < 6){
-            int redBall = r.nextInt(33) + 1;
+            int redBall = a.nextInt(33) + 1;
             set.add(redBall);
         }
         System.out.println("双色球中奖号码为:");
@@ -21,7 +21,7 @@ public class Work11 {
         for (Integer i : set) {
             System.out.print(i+" ");
         }
-        int blueBall = r.nextInt(16) + 1;
+        int blueBall = a.nextInt(16) + 1;
         System.out.println();
         System.out.println("蓝球是:"+blueBall);
 	}
