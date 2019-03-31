@@ -25,4 +25,20 @@ public class Work11 {
         System.out.println();
         System.out.println("蓝球是:"+blueBall);
 	}
+	
+	/**
+	 * 获取红球
+	 * @return
+	 */
+	public static int getRedBall() {
+		return (int)(Math.random() * 33) + 1;
+	}
+	
+	/**
+	 * 获取篮球
+	 * @return
+	 */
+	public static int getBlueBall() {
+		return (int)(Math.random() * 16) + 1;
+	}
 }
