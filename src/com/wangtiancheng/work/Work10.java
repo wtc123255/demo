@@ -14,14 +14,15 @@ public class Work10 {
 	public static void main(String[] args) {
 		System.out.println("请输入想要查看兔子数量的月份：");
 		Scanner scan=new Scanner(System.in);
-		int yue=countOfRabbit(scan.nextInt());
-		System.out.println("第"+yue+"月的兔子数量是："+yue);
+		int yue = scan.nextInt();
+		int cont=countOfRabbit(yue);
+		System.out.println("第"+yue+"月的兔子数量是："+cont);
 	}
-	public static int countOfRabbit(int intCode){
-		if(intCode==1 || intCode==2){
+	public static int countOfRabbit(int i){
+		if( i == 1  || i == 2 ){
 			return 1;
 		}else{
-			return countOfRabbit(intCode-2)+countOfRabbit(intCode-1);
+			return countOfRabbit(i-1) + countOfRabbit(i-2);
 		}
 	}
 }

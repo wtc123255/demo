@@ -15,7 +15,7 @@ public class Work12 {
             for(j = 1; j <= 4; j++) {
                 for(l = 1; l <= 4; l++) {
                     if(i != j&& j != l && i!= l) {
-                        b += 1;
+                        b ++;
                         System.out.println(i*100 + j*10 + l);
                     }
                 }
