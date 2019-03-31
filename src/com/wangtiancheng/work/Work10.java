@@ -18,7 +18,6 @@ public class Work10 {
 		System.out.println("第"+yue+"月的兔子数量是："+yue);
 	}
 	public static int countOfRabbit(int intCode){
-		int scan = 0;
 		if(intCode==1 || intCode==2){
 			return 1;
 		}else{
