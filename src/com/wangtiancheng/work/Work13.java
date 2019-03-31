@@ -10,7 +10,7 @@ public class Work13 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		try{
-		System.out.println("请输入：:");
+		System.out.println("请输入字符：:");
 		String string ;
 		StringBuffer integerBuffer1 = new StringBuffer(input.next());
 		string = integerBuffer1.toString();
