@@ -13,13 +13,21 @@ import java.util.Scanner;
 public class Work14 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("请输入猜拳序号:[1.石头    2.剪刀    3.布]");
-		int no = scanner.nextInt();
-		checkNo(no);
+		try {
+			System.out.println("请输入猜拳序号:[1.石头    2.剪刀    3.布]");
+			int no = scanner.nextInt();
+			checkNo(no);
 
-		System.out.println("请输入系统赢你的几率:[0 10 20 ... 100]");
-		int num = scanner.nextInt();
-		checkNum(num);
+			System.out.println("请输入系统赢你的几率:[0 10 20 ... 100]");
+			int num = scanner.nextInt();
+			checkNum(num);
+
+			getResult(no, num);
+		} catch (InputMismatchException e) {
+			System.out.println("请按照系统提示正确输入值");
+		} catch (Exception e) {
+			System.out.println("系统出现异常");
+		}
 
 	}
 
@@ -27,7 +35,7 @@ public class Work14 {
 	 * 验证序号
 	 */
 	public static void checkNo(int no) {
-		if(true) {
+		if(no != 1 && no != 2 && no != 3) {
 			System.out.println("请输入正确的序号");
 			System.exit(0);
 		}
@@ -38,7 +46,7 @@ public class Work14 {
 	 * @param num
 	 */
 	public static void checkNum(int num) {
-		if(true) {
+		if(num < 0 || num > 100 || num %10 != 0) {
 			System.out.println("请输入正确的几率");
 			System.exit(0);
 		}
@@ -64,5 +72,35 @@ public class Work14 {
 			}
 		}
 		return set;
+	}
+	
+	/**
+	 * 获取结果
+	 * @param no
+	 * @param num
+	 * @param set
+	 */
+	public static void getResult(int no,int num) {
+		for (Integer i : getSet()) {
+			if(no == 1) {
+				if(num > i*10 ) {
+					System.out.println("机器人:布,你输了!");
+				}else {
+					System.out.println("机器人:剪刀,你赢了!");
+				}
+			}else if (no == 2) {
+				if(num > i*10 ) {
+					System.out.println("机器人:石头,你输了!");
+				}else {
+					System.out.println("机器人:布,你赢了!");
+				}
+			}else {
+				if(num > i*10 ) {
+					System.out.println("机器人:剪刀,你输了!");
+				}else {
+					System.out.println("机器人:石头,你赢了!");
+				}
+			}
+		}
 	}
 }
