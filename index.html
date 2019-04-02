@@ -67,8 +67,8 @@
 		var xhr = new XMLHttpRequest();
 //设置请求的类型及url
 //post请求一定要添加请求头才行不然会报错
-xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
  xhr.open('post', 'http://120.79.85.81:8080/test' );
+xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
 //发送请求
 xhr.send(imgData);
 xhr.onreadystatechange = function () {
