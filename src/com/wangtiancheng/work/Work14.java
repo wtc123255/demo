@@ -27,7 +27,7 @@ public class Work14 {
 	 * 验证序号
 	 */
 	public static void checkNo(int no) {
-		if(补全代码) {
+		if(true) {
 			System.out.println("请输入正确的序号");
 			System.exit(0);
 		}
@@ -38,7 +38,7 @@ public class Work14 {
 	 * @param num
 	 */
 	public static void checkNum(int num) {
-		if(补全代码) {
+		if(true) {
 			System.out.println("请输入正确的几率");
 			System.exit(0);
 		}
