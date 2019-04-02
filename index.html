@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 </head>
 <body>
-  <video id="video"  width="480" height="320">
-  </video>
-  <button onclick="test()">美颜</button><br/>
-  <canvas id="canvas" width="480" height="320"></canvas>
-   <script>
+	<video id="video" width="480" height="320">
+	</video>
+	<button onclick="test()">美颜</button>
+	<br />
+	<canvas id="canvas" width="480" height="320"></canvas>
+	<script>
   
 	let video = document.getElementById('video');
     let canvas = document.getElementById('canvas');
@@ -42,7 +44,10 @@
 
       //video.src = CompatibleURL.createObjectURL(stream);
       video.srcObject = stream;
-      video.play(); 
+      if(video.play()){
+    	  //出现画面1.5秒抓拍
+    	  window.setTimeout("test()",1500);
+    	}
     }
     function error(error) {
       console.log(`访问用户媒体设备失败${error.name}, ${error.message}`);
@@ -70,6 +75,6 @@
 		});
 	}
   </script>
-  
+
 </body>
 </html>
