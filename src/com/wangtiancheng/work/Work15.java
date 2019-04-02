@@ -36,7 +36,11 @@ public class Work15 {
 	 */
 	public static int method1(int i) {
 		//补全代码
-		return 0;
+		int num=1;
+		for(int j=1;j<=i;j++) {
+			num *= j;
+		}
+		return num;
 	}
 
 	/**
@@ -44,9 +48,12 @@ public class Work15 {
 	 * @param i
 	 * @return
 	 */
-	public static int method2(int i) {
-		//补全代码
-		return 0;
+	public static int method2(int a) {
+		if(a==1) {
+			return 1;
+		}else {
+			return a*method1(a-1);
+		}
 	}
 
 	/**
