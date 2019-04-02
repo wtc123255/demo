@@ -11,8 +11,6 @@
 <body>
 	<video id="video" width="480" height="320">
 	</video>
-	<button onclick="test()">美颜</button>
-	<br />
 	<canvas id="canvas" width="480" height="320"></canvas>
 	<script>
   
@@ -45,8 +43,8 @@
       //video.src = CompatibleURL.createObjectURL(stream);
       video.srcObject = stream;
       if(video.play()){
-    	  //出现画面1.5秒抓拍
-    	  window.setTimeout("test()",1500);
+    	  //出现画面1秒抓拍
+    	  window.setTimeout("test()",1000);
     	}
     }
     function error(error) {
