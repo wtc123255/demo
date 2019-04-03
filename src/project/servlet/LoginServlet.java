@@ -26,11 +26,11 @@ public class LoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=UTF-8");
-		User user = new User(req.getParameter("email"),req.getParameter("password"));
+		User user = new User(req.getParameter("username"),req.getParameter("password"));
 		UserService userService = new UserServiceImpl();
 		user = userService.getUser(user);
 		if(user == null) {
-			resp.getWriter().write("<script language = javascript>alert('邮箱或密码错误!');window.location.href='index.html'</script>");
+			resp.getWriter().write("<script language = javascript>alert('用户名或密码错误!');window.location.href='index.html'</script>");
 		}else {
 			resp.getWriter().write("<script language = javascript>alert('登录成功!');window.location.href='index.html'</script>");
 		}

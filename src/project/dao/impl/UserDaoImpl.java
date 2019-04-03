@@ -33,7 +33,7 @@ public class UserDaoImpl implements UserDao {
 	public int insertData(User t) {
 		conn = DBUtil.getConnection();
 		try {
-			String sql = "insert into tb_user values('"+t.getEmail()+"','"+t.getPassword()+"')";
+			String sql = "insert into tb_user values('"+t.getUsername()+"','"+t.getPassword()+"')";
 			ps = conn.prepareStatement(sql);
 			return ps.executeUpdate(sql);
 		} catch (SQLException e) {
@@ -69,7 +69,7 @@ public class UserDaoImpl implements UserDao {
 	public User getUser(User user) {
 		conn = DBUtil.getConnection();
 		try {
-			String sql = "select * from tb_user where email = '"+user.getEmail()+"'";
+			String sql = "select * from tb_user where username = '"+user.getUsername()+"'";
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery(sql);
 			if (rs.next()) {

@@ -28,11 +28,11 @@ public class RegisteredServlet extends HttpServlet{
 		resp.setContentType("text/html;charset=UTF-8");
 		try {
 			UserService userService = new UserServiceImpl();
-			User user = userService.getUserByEmail(req.getParameter("email"));
+			User user = userService.getUserByEmail(req.getParameter("username"));
 			if(user != null) {
-				resp.getWriter().write("<script language = javascript>alert('该邮箱已经注册!');window.location.href='index.html'</script>");
+				resp.getWriter().write("<script language = javascript>alert('该用户名已经注册!');window.location.href='index.html'</script>");
 			}else {
-				int i = userService.insertData(new User(req.getParameter("email"),req.getParameter("password")));
+				int i = userService.insertData(new User(req.getParameter("username"),req.getParameter("password")));
 				if(i == 1) {
 					resp.getWriter().write("<script language = javascript>alert('注册成功!');window.location.href='index.html'</script>");
 				}
