@@ -79,7 +79,7 @@ public class UserDaoImpl implements UserDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.close(null, ps, conn);
+			DBUtil.close(rs, ps, conn);
 		}
 		return null;
 	}
