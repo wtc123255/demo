@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.util.Random;
 
 /** 
- * MD5加盐加密工具
+ * MD5加盐加密工具(此处用来加密用户密码)
  */
 public class MD5Util {
 	/**

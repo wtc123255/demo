@@ -5,7 +5,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -23,6 +25,40 @@ import project.util.ReqAndRespEncoding;
  */
 @WebServlet("/textServlet")
 public class TextServlet extends HttpServlet{
+	private static List<String> list;
+	private static SimpleDateFormat sdf;
+	
+	/**
+	 * 静态库加载数据,减少数据库连接通信
+	 */
+	static {
+		sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println("静态块代码获取数据中....");
+		Connection connection = null;
+		list = new ArrayList<>();
+		String sql = "select * from tm_text";
+		ResultSet resultSet = null;
+		PreparedStatement ps = null;
+		try {
+			connection = DBUtil.getConnection();
+			ps = connection.prepareStatement(sql);
+			resultSet = ps.executeQuery(sql);
+			while(resultSet.next()) {
+				list.add(resultSet.getString(1));
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.close(resultSet, ps, connection);
+		} 
+		int i=0;
+		for(String string : list) {
+			i++;
+			System.out.println("第"+i+"条数据:"+string);
+		}
+		System.out.println("数据获取完毕,共"+i+"条");
+	}
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
@@ -31,27 +67,10 @@ public class TextServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ReqAndRespEncoding.setEncoding(req, resp);
-		Connection connection = null;
-		List<String> list = new ArrayList<>();
 		Random random = new Random();
-		String sql = "select * from tm_text";
-		ResultSet resultSet = null;
-		PreparedStatement ps = null;
-		try {
-			connection = DBUtil.getConnection();
-			ps = connection.prepareStatement(sql);
-			resultSet = ps.executeQuery(sql);
-			if(list.size() <= 0 || null == list) {
-				while(resultSet.next()) {
-					list.add(resultSet.getString(1));
-				}
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			DBUtil.close(resultSet, ps, connection);
-		}
-		
-		resp.getWriter().write(list.get(random.nextInt(list.size()-1)));
+		//随机获取0-list.size()-1任意下标,从list中取出返回
+		String string = list.get(random.nextInt(list.size()-1));
+		System.out.println(sdf.format(new Date())+"-获取:"+string);
+		resp.getWriter().write(string);
 	}
 }

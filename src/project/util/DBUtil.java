@@ -11,7 +11,7 @@ import java.sql.SQLException;
  */
 public class DBUtil {
 	
-	public static final  String URL="jdbc:mysql://120.79.85.81:3306/test?useUnicode=true&characterEncoding=UTF-8";//链接的mysql
+	public static final String URL="jdbc:mysql://120.79.85.81:3306/test?useUnicode=true&characterEncoding=UTF-8";//链接的mysql
 	public static final String DREIVER = "com.mysql.jdbc.Driver"; 
 
 	static {
@@ -30,6 +30,7 @@ public class DBUtil {
 	 */
 	public static Connection getConnection() {
 		try {
+			//MD5加盐校验
 			String username = new String(DESUtil.decrypt(MySQLEncryption.USERNAME, MySQLEncryption.KEY));
 			String password = new String(DESUtil.decrypt(MySQLEncryption.PASSWORD, MySQLEncryption.KEY));
 			return DriverManager.getConnection(URL,username,password);//创建与数据库的链接

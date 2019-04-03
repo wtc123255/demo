@@ -1,7 +1,7 @@
 package project.util;
 
 /** 
- *  数据库连接加密
+ *  数据库连接信息密文
  */
 public class MySQLEncryption {
 	//秘钥

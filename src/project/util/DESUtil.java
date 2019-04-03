@@ -1,8 +1,6 @@
 package project.util;
 
-import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.Arrays;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -10,7 +8,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
 /** 
- *
+ * DES加密算法(此处用来加密数据库连接信息)
  */
 public class DESUtil {
 	public DESUtil() {
