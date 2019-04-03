@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * JDBC连接管理工具
  */
 public class DBUtil {
-	public static final  String URL="jdbc:mysql://120.79.85.81:3306/test?useUnicode=true&characterEncoding=UTF-8";//链接的mysql
+	public static final  String URL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8";//链接的mysql
 	public static final String NAME = "root";
 	public static final String PASSWORD = "admin12345";
 	public static final String DREIVER = "com.mysql.jdbc.Driver"; 
