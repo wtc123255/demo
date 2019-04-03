@@ -30,9 +30,9 @@ public class LoginServlet extends HttpServlet{
 		UserService userService = new UserServiceImpl();
 		user = userService.getUser(user);
 		if(user == null) {
-			resp.getWriter().write("<script language = javascript>alert('邮箱或密码错误!');window.location.href='error.html'</script>");
+			resp.getWriter().write("<script language = javascript>alert('邮箱或密码错误!');window.location.href='index.html'</script>");
 		}else {
-			resp.getWriter().write("<script language = javascript>alert('成功!');window.location.href='success.html'</script>");
+			resp.getWriter().write("<script language = javascript>alert('登录成功!');window.location.href='index.html'</script>");
 		}
 	}
 }

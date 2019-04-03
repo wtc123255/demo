@@ -30,15 +30,15 @@ public class RegisteredServlet extends HttpServlet{
 			UserService userService = new UserServiceImpl();
 			User user = userService.getUserByEmail(req.getParameter("email"));
 			if(user != null) {
-				resp.getWriter().write("<script language = javascript>alert('该邮箱已经注册!');window.location.href='error.html'</script>");
+				resp.getWriter().write("<script language = javascript>alert('该邮箱已经注册!');window.location.href='index.html'</script>");
 			}else {
 				int i = userService.insertData(new User(req.getParameter("email"),req.getParameter("password")));
 				if(i == 1) {
-					resp.getWriter().write("<script language = javascript>alert('注册成功!');window.location.href='success.html'</script>");
+					resp.getWriter().write("<script language = javascript>alert('注册成功!');window.location.href='index.html'</script>");
 				}
 			}
 		}catch (Exception e) {
-			resp.getWriter().write("<script language = javascript>alert('服务异常,注册失败!');window.location.href='error.html'</script>");
+			resp.getWriter().write("<script language = javascript>alert('服务异常,注册失败!');window.location.href='index.html'</script>");
 		}
 	}
 }
