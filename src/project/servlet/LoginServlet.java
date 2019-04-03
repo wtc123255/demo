@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import project.bean.User;
 import project.service.UserService;
 import project.service.impl.UserServiceImpl;
+import project.util.ReqAndRespEncoding;
 
 /** 
  * 登录
@@ -24,8 +25,7 @@ public class LoginServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html;charset=UTF-8");
+		ReqAndRespEncoding.setEncoding(req, resp);
 		User user = new User(req.getParameter("username"),req.getParameter("password"));
 		UserService userService = new UserServiceImpl();
 		user = userService.getUser(user);
