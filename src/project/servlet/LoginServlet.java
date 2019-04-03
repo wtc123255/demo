@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet{
 		if(user == null) {
 			resp.getWriter().write("<script language = javascript>alert('用户名或密码错误!');window.location.href='index.html'</script>");
 		}else {
-			resp.getWriter().write("<script language = javascript>alert('登录成功!');window.location.href='index.html'</script>");
+			resp.getWriter().write("<script language = javascript>window.location.href='http://120.79.85.81/029/index.html'</script>");
 		}
 	}
 }
