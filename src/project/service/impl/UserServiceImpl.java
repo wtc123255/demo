@@ -9,7 +9,7 @@ import project.service.UserService;
 import project.util.MD5Util;
 
 /** 
- * Service实现类
+ * Service业务处理实现类
  */
 public class UserServiceImpl implements UserService{
 
@@ -48,6 +48,7 @@ public class UserServiceImpl implements UserService{
 		User user2 = userDao.getUser(user);
 		if(user2 != null) {
 			//加密检验
+			//得用改用户名的user对象,原密码对比加盐MD5加密密码是否相等,如果相同则登录成功,返回对象,否则返回空
 			if(MD5Util.getSaltverifyMD5(user.getPassword(),user2.getPassword())) {
 				return user2;
 			}

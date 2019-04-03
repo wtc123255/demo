@@ -3,7 +3,8 @@ package project.common;
 import java.util.List;
 
 /** 
- * 公共service
+ * 数据增删改查service层公共接口
+ * 泛型
  */
 public interface IServiceCommand<T> {
 	//查询所有的数据

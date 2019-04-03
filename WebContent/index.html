@@ -26,19 +26,19 @@
 			<div id="signup">
 				<h1>免费注册</h1>
 
-				<form action="/" method="post">
+				<form action="registeredServlet" method="post">
 
 					<div class="field-wrap">
 						<label> 邮箱<span class="req">*</span>
-						</label> <input type="email" required autocomplete="off" />
+						</label> <input type="email" name="email" required autocomplete="off" />
 					</div>
 
 					<div class="field-wrap">
 						<label> 密码<span class="req">*</span>
-						</label> <input type="password" required autocomplete="off" />
+						</label> <input type="password" name="password" required autocomplete="off" />
 					</div>
 
-					<button type="submit" class="button button-block" />
+					<button type="submit" class="button button-block">
 					注册
 					</button>
 
@@ -49,21 +49,21 @@
 			<div id="login">
 				<h1>请登录</h1>
 
-				<form action="/" method="post">
+				<form action="loginServlet" method="post">
 
 					<div class="field-wrap">
 						<label> 邮箱<span class="req">*</span>
-						</label> <input type="email" required autocomplete="off" />
+						</label> <input type="email" name="email" required autocomplete="off" />
 					</div>
 
 					<div class="field-wrap">
 						<label> 密码<span class="req">*</span>
-						</label> <input type="password" required autocomplete="off" />
+						</label> <input type="password" name="password" required autocomplete="off" />
 					</div>
 
-					<p class="forgot">
+					<!-- <p class="forgot">
 						<a href="#">忘记密码?</a>
-					</p>
+					</p> -->
 
 					<button class="button button-block" />
 					登录

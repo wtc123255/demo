@@ -3,7 +3,7 @@ package project.common;
 import java.util.List;
 
 /** 
- * 数据增删改查公共接口
+ * 数据增删改查dao层公共接口
  * 泛型
  */
 public interface IDaoCommand<T> {
