@@ -11,5 +11,5 @@ public interface UserService extends IServiceCommand<User>  {
 	//自己扩展的方法写下面
 	public User getUser(User user);
 	
-	public User getUserByEmail(String username);
+	public User getUserByUsername(String username);
 }

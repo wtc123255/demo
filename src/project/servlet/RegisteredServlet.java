@@ -28,7 +28,7 @@ public class RegisteredServlet extends HttpServlet{
 		ReqAndRespEncoding.setEncoding(req, resp);
 		try {
 			UserService userService = new UserServiceImpl();
-			User user = userService.getUserByEmail(req.getParameter("username"));
+			User user = userService.getUserByUsername(req.getParameter("username"));
 			if(user != null) {
 				resp.getWriter().write("<script language = javascript>alert('该用户名已经注册!');window.location.href='index.html'</script>");
 			}else {

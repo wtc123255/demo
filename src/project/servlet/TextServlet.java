@@ -34,7 +34,7 @@ public class TextServlet extends HttpServlet{
 	private static SimpleDateFormat sdf;
 
 	/**
-	 * 静态库加载数据,减少数据库连接通信
+	 * 静态块加载数据,减少数据库连接通信
 	 */
 	static {
 		sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -75,7 +75,6 @@ public class TextServlet extends HttpServlet{
 		Random random = new Random();
 		//随机获取0-list.size()-1任意下标,从list中取出返回
 		String string = list.get(random.nextInt(list.size()-1));
-		log.setLevel(Level.INFO);
 		log.info(sdf.format(new Date())+"-获取:"+string);
 		resp.getWriter().write(string);
 	}
