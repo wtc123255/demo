@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,15 +27,18 @@ import project.util.ReqAndRespEncoding;
  */
 @WebServlet("/textServlet")
 public class TextServlet extends HttpServlet{
+
+	public static Logger log = Logger.getLogger(TextServlet.class.toString());
+
 	private static List<String> list;
 	private static SimpleDateFormat sdf;
-	
+
 	/**
 	 * 静态库加载数据,减少数据库连接通信
 	 */
 	static {
 		sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		System.out.println("静态块代码获取数据中....");
+		log.info("静态块代码获取数据中......");
 		Connection connection = null;
 		list = new ArrayList<>();
 		String sql = "select * from tm_text";
@@ -43,20 +48,20 @@ public class TextServlet extends HttpServlet{
 			connection = DBUtil.getConnection();
 			ps = connection.prepareStatement(sql);
 			resultSet = ps.executeQuery(sql);
+			log.info("正在查询数据......");
+			int i = 0;
 			while(resultSet.next()) {
-				list.add(resultSet.getString(1));
+				i++;
+				String string = resultSet.getString(1);
+				list.add(string);
+				log.info("第"+i+"条数据:"+string);
 			}
+			log.info("数据获取完毕,共"+i+"条");
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			DBUtil.close(resultSet, ps, connection);
 		} 
-		int i=0;
-		for(String string : list) {
-			i++;
-			System.out.println("第"+i+"条数据:"+string);
-		}
-		System.out.println("数据获取完毕,共"+i+"条");
 	}
 
 	@Override
@@ -70,7 +75,8 @@ public class TextServlet extends HttpServlet{
 		Random random = new Random();
 		//随机获取0-list.size()-1任意下标,从list中取出返回
 		String string = list.get(random.nextInt(list.size()-1));
-		System.out.println(sdf.format(new Date())+"-获取:"+string);
+		log.setLevel(Level.INFO);
+		log.info(sdf.format(new Date())+"-获取:"+string);
 		resp.getWriter().write(string);
 	}
 }
