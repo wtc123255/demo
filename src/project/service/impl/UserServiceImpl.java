@@ -6,6 +6,7 @@ import project.bean.User;
 import project.dao.UserDao;
 import project.dao.impl.UserDaoImpl;
 import project.service.UserService;
+import project.util.BCryptUtil;
 import project.util.MD5Util;
 
 /** 
@@ -24,7 +25,8 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public int insertData(User t) {
 		//加密保存密码
-		t.setPassword(MD5Util.getSaltMD5(t.getPassword()));
+		//t.setPassword(MD5Util.getSaltMD5(t.getPassword()));
+		t.setPassword(BCryptUtil.encode(t.getPassword()));
 		return userDao.insertData(t);
 	}
 
@@ -49,7 +51,8 @@ public class UserServiceImpl implements UserService{
 		if(user2 != null) {
 			//加密检验
 			//得用改用户名的user对象,原密码对比加盐MD5加密密码是否相等,如果相同则登录成功,返回对象,否则返回空
-			if(MD5Util.getSaltverifyMD5(user.getPassword(),user2.getPassword())) {
+			//if(MD5Util.getSaltverifyMD5(user.getPassword(),user2.getPassword())) {
+			if(BCryptUtil.isMatch(user.getPassword(),user2.getPassword())) {
 				return user2;
 			}
 		}

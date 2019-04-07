@@ -30,7 +30,7 @@ public class DBUtil {
 	 */
 	public static Connection getConnection() {
 		try {
-			//MD5加盐校验
+			//DES加密校验
 			String username = new String(DESUtil.decrypt(MySQLEncryption.USERNAME, MySQLEncryption.KEY));
 			String password = new String(DESUtil.decrypt(MySQLEncryption.PASSWORD, MySQLEncryption.KEY));
 			return DriverManager.getConnection(URL,username,password);//创建与数据库的链接
