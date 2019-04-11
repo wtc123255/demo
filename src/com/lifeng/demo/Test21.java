@@ -18,9 +18,9 @@ import org.opencv.objdetect.CascadeClassifier;
 public class Test21 {
 	public static void main(String[] args) {
 		//图片地址
-		String inputImagePath = System.getProperty("user.dir")+"/img/1.jpg";
+		String inputImagePath = System.getProperty("user.dir")+"/img/2.jpg";
 		// 指定读出的图片路径和输出的文件
-		String outputImageFile = System.getProperty("user.dir")+"/imager/test.jpg";
+		String outputImageFile = System.getProperty("user.dir")+"/imager/test1.jpg";
 
 		//加载lib,这个lib的名称
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
