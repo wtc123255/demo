@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.30.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-security-core-4.1.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/opencv-410"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
