@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class Test02 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("请输入你的电话:");
+		System.out.println("请输入你的联系方式:");
 		String tel = sc.nextLine();
 		char[] arr = tel.toCharArray();
 		HashSet<Character> set = new HashSet<>();
